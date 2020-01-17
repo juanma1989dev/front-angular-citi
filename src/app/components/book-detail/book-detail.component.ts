@@ -22,6 +22,9 @@ export class BookDetailComponent implements OnInit {
     this.getBook();
   }
 
+  /**
+   * Invoca el servicio de libros para obtener un libro
+   */
   getBook() {
     const bookId = parseInt(this.route.snapshot.paramMap.get('id'), 10);
 

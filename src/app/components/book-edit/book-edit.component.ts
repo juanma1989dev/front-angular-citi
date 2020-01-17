@@ -36,6 +36,9 @@ export class BookEditComponent implements OnInit {
     this.getBook();
   }
 
+  /**
+   * Funcion que invoca el servicio de libros para obtener un libro
+   */
   getBook() {
     const bookId = parseInt(this.route.snapshot.paramMap.get('id'), 10);
     this.book$ = this.booksService.getBook(bookId).pipe(

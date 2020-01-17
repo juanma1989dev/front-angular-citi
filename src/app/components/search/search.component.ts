@@ -20,6 +20,10 @@ export class SearchComponent implements OnInit {
   ngOnInit() {
   }
 
+  /**
+   * Fuuncionalidad para invocar el servicio de busqueda de libros
+   * @param termSearch string
+   */
   changeSearchBox(termSearch: string) {
     this.booksService.searchBook(termSearch).subscribe((books: Book[]) => {
       this.books = books;

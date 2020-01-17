@@ -20,10 +20,17 @@ export class AuthorListComponent implements OnInit {
     this.getAuthors();
   }
 
+  /**
+   * Funcion que invoca el servicio de autores para obtener todos los autores
+   */
   getAuthors() {
     this.authors$ = this.authorService.getAuthors();
   }
 
+  /**
+   * Funcion que invoca el servicio de autores para eliminar un autor
+   * @param id number
+   */
   deleteAuthor(id: number) {
     this.authorService.deleteAuthor(id).subscribe((res: any) => {
       if (res.success) {
