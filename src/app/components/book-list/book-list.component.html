@@ -4,14 +4,21 @@
 </div>
 
 <ul class="list-group" *ngIf="books$ | async as books; else loading">
-  <li class="list-group-item" *ngFor="let book of books">
-    {{ book.nombre }} - {{ book.autor }} ({{ book.idioma }})
-    <p>
-      <a [routerLink]="['/book-edit', book.id]" class="mx-2 btn btn-outline-info">Editar</a>
-      <a (click)="deleteBook(book.id)" class="mx-2 btn btn-outline-danger">Eliminar</a>
-    </p>
-  </li>
+  <ng-container *ngIf="books.length; else empty">
+    <li class="list-group-item" *ngFor="let book of books">
+      {{ book.nombre }} - {{ book.autor }} ({{ book.idioma }})
+      <p>
+        <a [routerLink]="['/book-edit', book.id]" class="mx-2 btn btn-outline-info">Editar</a>
+        <a (click)="deleteBook(book.id)" class="mx-2 btn btn-outline-danger">Eliminar</a>
+      </p>
+    </li>
+  </ng-container>
+
+  <ng-template #empty>
+    <h4 class="text-center">No hay libros registrados.</h4>
+  </ng-template>
+
 </ul>
 <ng-template #loading>
-  <h3>Loagin</h3>
+  <h3>Loading ...</h3>
 </ng-template>

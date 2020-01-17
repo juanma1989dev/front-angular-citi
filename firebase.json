@@ -1,0 +1,10 @@
+{
+  "hosting": {
+    "public": "dist/banamex",
+    "ignore": [
+      "firebase.json",
+      "**/.*",
+      "**/node_modules/**"
+    ]
+  }
+}
