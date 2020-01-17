@@ -14,7 +14,7 @@ export class BooksService {
 
   /**
    * Realiza la busqueda de libros
-   * @param term: string
+   * @param term string
    */
   searchBook(term: string) {
     return this.client.get(`${environment.api}/books-search?term=${term}`);
@@ -22,7 +22,7 @@ export class BooksService {
 
   /**
    * Obtiene un libro (API)
-   * @param id: number
+   * @param id number
    */
   getBook(id: number) {
     return this.client.get(`${environment.api}/books/${id}`);
@@ -30,7 +30,7 @@ export class BooksService {
 
   /**
    * Registra un libro  (API)
-   * @param book: Book
+   * @param book Book
    */
   saveBook(book: Book) {
     return this.client.post(`${environment.api}/books`, book);
@@ -39,7 +39,7 @@ export class BooksService {
   /**
    * Actualiza un libro  (API)
    * @param id: number
-   * @param book: Book
+   * @param book Book
    */
   updateBook(id: number, book: Book) {
     return this.client.put(`${environment.api}/books/${id}`, book);
@@ -54,7 +54,7 @@ export class BooksService {
 
   /**
    * Elimina un libor  (API)
-   * @param id: number
+   * @param id number
    */
   deleteBook(id: number) {
     return this.client.delete(`${environment.api}/books/${id}`);

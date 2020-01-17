@@ -1,7 +1,7 @@
-<h3 class="mt-4 mb-3">
-  Lista de Libros |
-  <a class="btn btn-outline-info mx-2" [routerLink]="['/book-add']" >Agregar libro</a>
-</h3>
+<div class="col-12  breadcrumb">
+   <h4>Lista de libros</h4>
+  <a class="btn btn-outline-primary mx-2" [routerLink]="['/book-add']" >Agregar libro</a>
+</div>
 
 <ul class="list-group" *ngIf="books$ | async as books; else loading">
   <li class="list-group-item" *ngFor="let book of books">

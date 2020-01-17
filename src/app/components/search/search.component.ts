@@ -4,10 +4,10 @@ import { BooksService } from '../../services/books.service';
 
 @Component({
   selector: 'app-list-books',
-  templateUrl: './list-books.component.html',
-  styleUrls: ['./list-books.component.sass']
+  templateUrl: './search.component.html',
+  styleUrls: ['./search.component.sass']
 })
-export class ListBooksComponent implements OnInit {
+export class SearchComponent implements OnInit {
 
   searchBox: string;
 

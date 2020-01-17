@@ -10,9 +10,12 @@ export class BookComponent implements OnInit {
 
   @Input() book: Book;
 
+  @Input() detail = false;
+
   constructor() { }
 
   ngOnInit() {
+    console.log('detail', this.detail)
   }
 
 }

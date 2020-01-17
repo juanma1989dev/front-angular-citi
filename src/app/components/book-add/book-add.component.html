@@ -1,4 +1,9 @@
 <div class="row">
+  <div class="col-12  breadcrumb">
+    <h4>Agregar libro</h4>
+    <a class="btn btn-outline-danger mx-2" [routerLink]="['/book-list']" >Cancelar</a>
+  </div>
+
   <div class="col-12">
     <form [formGroup]="formBook" (ngSubmit)="saveBook(formBook)">
       <div class="form-group">

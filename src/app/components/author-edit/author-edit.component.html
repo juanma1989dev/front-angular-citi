@@ -1,4 +1,8 @@
 <div class="row">
+  <div class="col-12  breadcrumb">
+    <h4 class="text-center">Editar autor</h4>
+    <a class="btn btn-outline-danger mx-2" [routerLink]="['/author-list']" >Cancelar</a>
+  </div>
   <div class="col-12" *ngIf="author$ | async; else loading">
     <form [formGroup]="authorForm" (ngSubmit)="updateAuthor(authorForm)">
       <div class="form-group">

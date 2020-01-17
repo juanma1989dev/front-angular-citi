@@ -53,7 +53,7 @@ export class BookEditComponent implements OnInit {
   updateBook(formBook: FormGroup) {
     if (formBook.valid) {
       const data: Book = formBook.value;
-      this.booksService.saveBook(data).subscribe((res: any) => {
+      this.booksService.updateBook(this.book.id, data).subscribe((res: any) => {
         if (res.success) {
           return this.router.navigate(['/book-list']);
         }

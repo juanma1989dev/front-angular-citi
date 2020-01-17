@@ -1,10 +1,10 @@
-<h3 class="mt-4 mb-3">
-  Lista de Autores |
-  <a class="btn btn-outline-info mx-2" [routerLink]="['/author-add']" >Agregar autor</a>
-</h3>
+<div class="col-12  breadcrumb">
+   <h4>Lista de Autores</h4>
+  <a class="btn btn-outline-primary mx-2" [routerLink]="['/author-add']" >Agregar autor</a>
+</div>
 
 <ul class="list-group" *ngIf="authors$ | async as authors; else loading">
-  <ng-container *ngIf="authors.lenght; else empty">
+  <ng-container *ngIf="authors.length; else empty">
     <li class="list-group-item" *ngFor="let author of authors" >
       <p>Nombre : {{ author.nombre }} ({{ author.nacionalidad }})</p>
       <p>Año de naciomiento : {{ author.fecha_nacimiento }}</p>

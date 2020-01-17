@@ -6,7 +6,7 @@ import { NotifierModule } from 'angular-notifier';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { ListBooksComponent } from './components/list-books/list-books.component';
+import { SearchComponent } from './components/search/search.component';
 import { BookComponent } from './components/book/book.component';
 import { BookDetailComponent } from './components/book-detail/book-detail.component';
 import { BookAddComponent } from './components/book-add/book-add.component';
@@ -19,7 +19,7 @@ import { BookListComponent } from './components/book-list/book-list.component';
 @NgModule({
   declarations: [
     AppComponent,
-    ListBooksComponent,
+    SearchComponent,
     BookComponent,
     BookDetailComponent,
     BookAddComponent,

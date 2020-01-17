@@ -1,6 +1,6 @@
 <div class="row">
   <ng-container *ngIf="book$ | async as book; else loading">
-    <app-book class="col-md-12 detail" [book]="book"></app-book>
+    <app-book class="col-md-6 offset-md-3 detail" [book]="book" detail="true"></app-book>
   </ng-container>
   <ng-template #loading>
     <h3 class="text-center">Loading</h3>

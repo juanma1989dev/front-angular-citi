@@ -1,4 +1,8 @@
 <div class="row">
+  <div class="col-12  breadcrumb">
+    <h4 class="text-center">Agregar autor</h4>
+    <a class="btn btn-outline-danger mx-2" [routerLink]="['/author-list']" >Cancelar</a>
+  </div>
   <div class="col-12">
     <form [formGroup]="authorForm" (ngSubmit)="saveAuthor(authorForm)">
       <div class="form-group">
