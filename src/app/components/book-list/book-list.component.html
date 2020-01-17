@@ -1,0 +1,17 @@
+<h3 class="mt-4 mb-3">
+  Lista de Libros |
+  <a class="btn btn-outline-info mx-2" [routerLink]="['/book-add']" >Agregar libro</a>
+</h3>
+
+<ul class="list-group" *ngIf="books$ | async as books; else loading">
+  <li class="list-group-item" *ngFor="let book of books">
+    {{ book.nombre }} - {{ book.autor }} ({{ book.idioma }})
+    <p>
+      <a [routerLink]="['/book-edit', book.id]" class="mx-2 btn btn-outline-info">Editar</a>
+      <a (click)="deleteBook(book.id)" class="mx-2 btn btn-outline-danger">Eliminar</a>
+    </p>
+  </li>
+</ul>
+<ng-template #loading>
+  <h3>Loagin</h3>
+</ng-template>

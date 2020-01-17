@@ -1,0 +1,25 @@
+<h3 class="mt-4 mb-3">
+  Lista de Autores |
+  <a class="btn btn-outline-info mx-2" [routerLink]="['/author-add']" >Agregar autor</a>
+</h3>
+
+<ul class="list-group" *ngIf="authors$ | async as authors; else loading">
+  <ng-container *ngIf="authors.lenght; else empty">
+    <li class="list-group-item" *ngFor="let author of authors" >
+      <p>Nombre : {{ author.nombre }} ({{ author.nacionalidad }})</p>
+      <p>Año de naciomiento : {{ author.fecha_nacimiento }}</p>
+      <a [routerLink]="['/author-edit', author.id]" class="btn btn-outline-info mx-1" >Editar</a>
+      <a (click)="deleteAuthor(author.id)" class="btn btn-outline-danger mx-1" >Eliminar</a>
+    </li>
+  </ng-container>
+
+  <ng-template #empty>
+    <h4 class="text-center">No hay autores registrados.</h4>
+  </ng-template>
+</ul>
+
+<ng-template #loading>
+  <h4>Cargando</h4>
+</ng-template>
+
+
